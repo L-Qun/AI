@@ -119,10 +119,61 @@ npx n8n
 
 5. 打通 AI 创作
 
+现在我们已经可以自动化发布文章了，接下来我们要做的一个事情就是彻底解放双手，创作也让 AI 来搞
+
+找到 AI Agent 节点
+
+<img width="766" height="1496" alt="CleanShot 2025-11-03 at 00 05 54@2x" src="https://github.com/user-attachments/assets/9ff2c468-776c-44cd-81b0-51c52454b7c2" />
+
+然后我们需要给这个 Agent（智能体）配置一个模型
+
+<img width="658" height="402" alt="CleanShot 2025-11-03 at 00 06 33@2x" src="https://github.com/user-attachments/assets/a7e712f3-f768-42e6-88a0-4907328c37fe" />
+
+你可以选任何模型，比如 DeepSeek、ChatGPT、Gemini 等等，但是这里需要你的 API Key，比如我这里是 DeepSeek
+
+<img width="2880" height="1624" alt="CleanShot 2025-11-03 at 00 07 57@2x" src="https://github.com/user-attachments/assets/3c038d60-f1db-483b-8064-ea72191ad941" />
+
+创建账号后需要把你从 [DeepSeek 官网](https://platform.deepseek.com/api_keys)获取的 API Key 配置上
+
+最后我们可以把这些节点全部连接起来，并在最前面配置上 `On chat message` trigger
+
+<img width="874" height="236" alt="CleanShot 2025-11-03 at 00 24 24@2x" src="https://github.com/user-attachments/assets/43cb542b-aebf-463d-ad17-bfcd3d90ecc1" />
+
+同时为了 AI Agent 创作的诗句能被正常的使用到，我们需要修改一下新建草稿节点
+
+<img width="2880" height="1626" alt="CleanShot 2025-11-03 at 00 27 20@2x" src="https://github.com/user-attachments/assets/8bd3d34b-f993-4245-b14f-ccb45b74c25a" />
 
 
+```
+[{
+   "article_type":"news",
+   "title": "每日一诗",
+   "content": {{ JSON.stringify($('AI Agent1').item.json.output)}},
+   "thumb_media_id": "{{ $json.media_id }}"
+}] 
+```
+
+<img width="2872" height="1626" alt="CleanShot 2025-11-03 at 00 28 04@2x" src="https://github.com/user-attachments/assets/b8c05b2d-5154-4575-805d-9235ebeb7a07" />
 
 
+### 总结
+
+我们介绍了从用户需求到 AI 创作再到发布公众号的整个核心流程。基于这套流程你可以继续扩展，例如：
+
+- 更美观的公众号排版（需要让 AI 生成 HTML 格式的文章，感兴趣的可以提 Issue 我后面再创作一篇）
+- 在创作前你自动爬取当日最新的网络数据
+- 定时发布、发布以后邮件通知你
+- Multi Agent（增加一个或多个做更多事情，例如对文章进行 review）
+- 等等...
+
+有问题可以随时发起 Issue，创作不易，如果这篇操作对您有用可以请我喝杯咖啡，谢谢🙏
+
+<table>
+  <tr>
+     <td><img src="https://github.com/user-attachments/assets/8178733c-29e8-403d-94b4-9b196c34ca5b" width="200" alt="Alipay" /></td>
+    <td><img src="https://github.com/user-attachments/assets/80b826db-84f9-43e7-8e85-23f7d123059b" width="200" alt="Wechat" /></td>
+  </tr>
+</table>
 
 
 
