@@ -221,15 +221,6 @@ npx n8n
 - Multi Agent（增加一个或多个做更多事情，例如对文章进行 review）
 - 等等...
 
-有问题可以随时发起 Issue，创作不易，如果这篇操作对您有用可以请我喝杯咖啡，谢谢🙏
-
-<table>
-  <tr>
-     <td><img src="https://github.com/user-attachments/assets/8178733c-29e8-403d-94b4-9b196c34ca5b" width="200" alt="Alipay" /></td>
-    <td><img src="https://github.com/user-attachments/assets/80b826db-84f9-43e7-8e85-23f7d123059b" width="200" alt="Wechat" /></td>
-  </tr>
-</table>
-
 
 
 
