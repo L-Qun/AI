@@ -2,7 +2,7 @@
 
 # 人们如何使用 LLM
 
-## 变成份额的逐步增加
+## 编程份额的逐步增加
 
 <img width="837" height="329" alt="CleanShot 2025-12-06 at 16 21 27@2x" src="https://github.com/user-attachments/assets/3f4ed1b3-4c4a-4767-88dc-23ba534b6d23" />
 
